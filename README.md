@@ -72,4 +72,7 @@ Los cambios solo se aplican después de hacer clic en el lienzo (ubicación de t
 Los archivos subidos se almacenan temporalmente en la carpeta static/uploads/.
 
 🧑‍💻 Autor
-Desarrollado por davidbriangarcia dave.# pdf-editor
+
+Desarrollado por davidbriangarcia dave.
+
+# pdf-editor
