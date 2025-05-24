@@ -1,0 +1,148 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px; /* Espacio entre columnas */
+}
+
+.controls {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.viewer-area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+input[type="file"],
+input[type="text"],
+button {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#pdf-viewer {
+    border: 1px solid #aaa;
+    background-color: #e0e0e0;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Para paginación abajo */
+    padding: 10px;
+}
+
+#page-container {
+    position: relative; /* Clave para posicionar marcadores */
+    max-width: 100%;
+    overflow: auto; /* Si la imagen es muy grande */
+}
+
+#page-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Evita espacio extra bajo la imagen */
+    border: 1px dashed #555;
+    background-color: white;
+}
+
+#pagination {
+    margin-top: 10px;
+}
+
+#status {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #337ab7;
+}
+
+#downloadLink a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #337ab7;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#downloadLink a:hover {
+    background-color: #286090;
+}
+
+/* Estilos para los marcadores visuales */
+.visual-marker {
+    position: absolute;
+    font-size: 22px;      /* Ajusta este valor para que coincida con el PDF */
+    padding: 2px 8px;
+    background: rgba(255,255,0,0.3);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    pointer-events: auto;
+    z-index: 10;
+    transform: translateY(-50%); /* Centra verticalmente respecto al punto de clic */
+}
+
+.visual-marker img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none; /* Para que el clic llegue al div */
+}
+
+.visual-marker .delete-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    line-height: 14px; /* Centrar la X */
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    min-width: 16px; /* Asegurar tamaño */
+    display: block; /* Asegurar que sea un bloque */
+    box-sizing: border-box; /* Incluir padding/border en el tamaño */
+}

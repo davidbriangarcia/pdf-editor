@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor PDF Básico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Editor PDF Básico</h1>
+
+    <div class="container">
+        <div class="controls">
+            <h2>1. Cargar PDF</h2>
+            <input type="file" id="pdfUpload" accept=".pdf">
+
+            <h2>2. Añadir Elementos</h2>
+            <div id="add-controls" style="display: none;">
+                <label for="textInput">Texto a añadir:</label>
+                <input type="text" id="textInput" placeholder="Nombre, DNI, etc.">
+                <button id="addTextBtn">Añadir Texto</button>
+                <br><br>
+                <label for="imageUpload">Firma/Huella:</label>
+                <input type="file" id="imageUpload" accept="image/png, image/jpeg">
+                <button id="addImageBtn">Añadir Imagen</button>
+                <p><small>Haz clic en la página para seleccionar dónde añadir.</small></p>
+                
+                <h2>3. Guardar</h2>
+                <button id="savePdfBtn" disabled>Guardar y Descargar PDF</button>
+                <div id="downloadLink"></div>
+            </div>
+            <div id="status"></div>
+        </div>
+
+        <div class="viewer-area">
+            <div id="pdf-thumbnails"></div>
+            <div id="pdf-viewer">
+                <div id="page-container">
+                     <img id="page-image" src="" alt="Página del PDF">
+                     </div>
+                <div id="pagination">
+                    <button id="prevPageBtn" disabled>&lt; Anterior</button>
+                    <span id="pageIndicator">Página - / -</span>
+                    <button id="nextPageBtn" disabled>Siguiente &gt;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
