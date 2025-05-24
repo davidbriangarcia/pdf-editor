@@ -74,5 +74,3 @@ Los archivos subidos se almacenan temporalmente en la carpeta static/uploads/.
 🧑‍💻 Autor
 
 Desarrollado por davidbriangarcia dave.
-
-# pdf-editor
